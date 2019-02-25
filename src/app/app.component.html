@@ -1,0 +1,67 @@
+<div class="example-sidenav-content">
+
+  <div class="pos-f-t">
+    <nav class="navbar navbar-light" style="background-color:teal;">
+      <button class="navbar-toggler" (click)="drawer.toggle()" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <ul class="navbar-nav">
+        <li class="nav-item" *ngIf="isAuthenticate()">
+          <a class="nav-link" (click)="logout()">
+            <span>
+              <strong>Mr.{{userInfo()}}</strong>
+            </span>, Logout</a>
+        </li>
+        <li class="nav-item" *ngIf="!isAuthenticate()">
+          <a class="nav-link"  routerLink="/login">Login</a>
+        </li>
+      </ul>
+
+    </nav>
+  </div>
+
+</div>
+
+<mat-drawer-container class="example-container" autosize>
+
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p >Menu-</p>
+
+    <mat-list dense *ngIf="isAuthenticate()">
+      <mat-list-item >
+        <a routerLink="/supplier">Supplier</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/category">Category</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/product">Product</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a routerLink="/stock">Stock</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/sale">Sale</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/dashboard" data-toggle="collapse" data-target="#childDashboard">Dashboard</a>
+      </mat-list-item>
+      <mat-list-item >
+        <div id="childDashboard" class="collapse">
+            <a routerLink="/dashboard/userSetting"> -User Setting</a> 
+            <a routerLink="/dashboard/report"> -Report</a>
+        </div>
+        
+        </mat-list-item>
+
+    </mat-list>
+  </mat-drawer>
+
+  <div class="appcontent">
+    <router-outlet></router-outlet>
+
+  </div>
+
+</mat-drawer-container>

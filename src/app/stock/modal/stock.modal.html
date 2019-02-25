@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>{{modalConfig.header}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="stockForm">
+        <div>
+            <mat-form-field class="col-md-12">
+                <input matInput formControlName="stockNo" placeholder="stock No">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="col-md-12">
+                <input matInput formControlName="unitPrice" placeholder="unitPrice">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="col-md-12">
+                <input matInput formControlName="quantity" placeholder="quantity">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="col-md-12">
+                <input matInput formControlName="stockInDate" placeholder="stockIn Date">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field  class="col-md-12"> 
+                <mat-select placeholder="supplier" formControlName="supplierId"  [(ngModel)]="selectedSupplierValue" name="supplier">
+                    <mat-option *ngFor="let supplier of suppliers" [value]="supplier.supplierId">
+                        {{supplier.companyName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field  class="col-md-12"> 
+                <mat-select placeholder="Product" formControlName="productId"  [(ngModel)]="selectedValue" name="product">
+                    <mat-option *ngFor="let product of products" [value]="product.productId">
+                        {{product.productName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- <div>
+            <mat-form-field class="col-md-12">
+                <textarea matInput formControlName="description" placeholder="desciption"></textarea>
+            </mat-form-field>
+        </div> -->
+    </form>
+
+
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" *ngIf="updateButton" (click)="updateStock()">Update</button>
+    <button mat-raised-button color="primary" *ngIf="addButton" (click)="addStock()">Add</button>
+    <button mat-raised-button color="accent" (click)="onNoClick()">No Thanks</button>
+
+</div>

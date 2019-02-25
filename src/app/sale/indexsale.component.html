@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-8">
+    <input type="text" class="form-control" placeholder="search order" (change)="addOrder()">
+    <br>
+    <div class="orderList">
+      <table class="table table-bordered table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr *ngFor="let o of orders;let i = index;">
+            <th>{{i+1}}</th>
+            <td>xzcxzcccccccccccccccccccccccccccccccccccccccccccccccccccc</td>
+            <td><input type="number"   class="editableInput" [(ngModel)]="o.qty"    /></td>
+            <td><input  type="number"  class="editableInput" [(ngModel)]="o.price"  /></td>
+            <td>{{o.qty*o.price}}</td>
+          </tr>
+  
+        </tbody>
+      </table>
+    </div>
+   
+
+  </div>
+  <div class="col-md-4">
+   
+    <mat-card class="example-card">
+
+      <mat-card-content>
+        <h2>Sub Total:{{subTotalCal()}}</h2> 
+        <br>
+        <h2>Pay : <input  style="float: right;" [(ngModel)]="paymoney" /></h2> 
+        <br>
+        <h2>Change : {{refunOrPay()}}</h2> 
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+</div>

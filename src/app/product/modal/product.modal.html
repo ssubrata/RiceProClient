@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>{{modalConfig.header}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="productForm">
+        <div>
+            <mat-form-field class="col-md-12">
+                <input matInput formControlName="productName" placeholder="product name">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field  class="col-md-12"> 
+                <mat-select placeholder="Category" formControlName="categoryId"  [(ngModel)]="selectedValue" name="food">
+                    <mat-option *ngFor="let category of categorys" [value]="category.categoryId">
+                        {{category.categoryName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="col-md-12">
+                <textarea matInput formControlName="description" placeholder="desciption"></textarea>
+            </mat-form-field>
+        </div>
+    </form>
+
+
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" *ngIf="updateButton" (click)="updateProduct()">Update</button>
+    <button mat-raised-button color="primary" *ngIf="addButton" (click)="addProduct()">Add</button>
+    <button mat-raised-button color="accent" (click)="onNoClick()">No Thanks</button>
+
+</div>

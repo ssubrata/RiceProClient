@@ -1,0 +1,21 @@
+mat-grid-tile {
+    background: lightblue;
+  }
+  td, tr, th {
+    border: 1px solid black;
+}
+.orderList{
+    height: 500px;
+    overflow:auto;
+}
+.editableInput {
+    width: 100%;
+    display: block;
+    background:#212529 ;
+    background-color: #212529;
+    color: white;
+    border-color: #212529;
+}
+.col-md-8{
+    max-height:100%;
+}

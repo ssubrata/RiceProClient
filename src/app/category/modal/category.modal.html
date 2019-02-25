@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>{{modalConfig.header}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="categoryForm">
+            <div >
+                    <mat-form-field class="col-md-12">
+                        <input matInput formControlName="categoryName" placeholder="category name">
+                    </mat-form-field>
+                </div>
+                <div >
+                    <mat-form-field class="col-md-12">
+                            <textarea matInput formControlName="description"  placeholder="desciption"></textarea>
+                    </mat-form-field>
+                </div>
+    </form>
+   
+   
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary"  *ngIf="updateButton" (click)="updateCategory()" >Update</button>
+    <button mat-raised-button color="primary"  *ngIf="addButton" (click)="addCategory()" >Add</button>
+    <button mat-raised-button color="accent"   (click)="onNoClick()">No Thanks</button>
+
+</div>

@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.mouseOver1{
+    background-color: #4286f4;
+    color: white;
+    font-weight: bolder;
+
+}
+.mouseOut1{
+    background-color:white;
+    color: black;
+    font-weight: normal;
+}

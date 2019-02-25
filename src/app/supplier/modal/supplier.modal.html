@@ -1,0 +1,35 @@
+
+<h1 mat-dialog-title>{{modalConfig.header}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="supllierForm">
+            <div >
+                    <mat-form-field class="col-md-12">
+                        <input matInput formControlName="ownerName" placeholder="owner name">
+                    </mat-form-field>
+                </div>
+                <div >
+                    <mat-form-field class="col-md-12">
+                        <input matInput formControlName="companyName" placeholder="comapany name">
+                    </mat-form-field>
+                </div>
+                
+                <div >
+                    <mat-form-field class="col-md-12">
+                        <input matInput formControlName="address" placeholder="address">
+                    </mat-form-field>
+                </div>
+                <div >
+                    <mat-form-field class="col-md-12">
+                        <input matInput formControlName= "contactName" placeholder="contact">
+                    </mat-form-field>
+                </div>
+    </form>
+   
+   
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary"  *ngIf="updateButton" (click)="updateSupplier()" >Update</button>
+    <button mat-raised-button color="primary"  *ngIf="addButton" (click)="addSupplier()" >Add</button>
+    <button mat-raised-button color="accent"   (click)="onNoClick()">No Thanks</button>
+
+</div>
